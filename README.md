@@ -5,7 +5,7 @@
 
 ## A Rust crate for ST Microelectronics STHS34PF80 presence and motion detection sensor 
 
-<https://github.com/marvinrobot42/sths34pf80.git>
+<https://github.com/marvinrobot42/stsh34pf80.git>
 
 [STHS34PF80]: https://www.st.com/en/mems-and-sensors/sths34pf80.html
 
@@ -37,6 +37,9 @@ sensitivity.
 
 This driver is loosly based on Sparkfun Arduino STHS34PF80 driver.  A Sparkfun STHS34PF80
 https://www.sparkfun.com/products/22494 sensor board was used for this driver development.
+
+Unfortunately the github repository name is not spelled correctly but now stuck with it.
+The proper device and crate name is sths34pf80 while the mis-spelled repo name is stsh34pf80.
 
 ### Recent version history
   - 0.1.4  Documentation improvements
