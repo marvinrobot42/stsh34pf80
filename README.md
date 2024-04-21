@@ -21,7 +21,7 @@ sensitivity.
 - designed for embedded use (ESP32-C3, -C6 and -S3 and STM32F3DISCOVERY)
 - configurable interrupt pin
 - data ready status based presence, motion and ambient shock measurement reads 
-- low pass filter configuration in needed
+- low pass filter configuration if needed
 - hysteresis getters and setters
 - sensivity getters and setters
 - gain getters and setters
@@ -39,8 +39,8 @@ This driver is loosly based on Sparkfun Arduino STHS34PF80 driver.  A Sparkfun S
 https://www.sparkfun.com/products/22494 sensor board was used for this driver development.
 
 ### Recent version history
-0.1.3  Documentation improvements
-0.1.0  Initial release.
+  - 0.1.4  Documentation improvements
+  - 0.1.0  Initial release.
 
 
 ## Usage
