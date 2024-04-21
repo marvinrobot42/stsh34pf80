@@ -4,7 +4,7 @@ version = "0.1.4"
 edition = "2021"
 
 authors = ["fordauthor42@gmail.com"]
-repository = "https://github.com/marvinrobot42/sths34pf80.git"
+repository = "https://github.com/marvinrobot42/stsh34pf80.git"
 description = "ST STHS34PF80 driver"
 documentation = "https://docs.rs/sths34pf80"
 
