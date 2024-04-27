@@ -42,6 +42,7 @@ Unfortunately the github repository name is not spelled correctly but now stuck 
 The proper device and crate name is sths34pf80 while the mis-spelled repo name is stsh34pf80.
 
 ### Recent version history
+  - 0.1.6  fizxed the example below, added Raspberry Pi example
   - 0.1.5  github repo name fixed in links
   - 0.1.4  Documentation improvements.
   - 0.1.0  Initial release.
@@ -97,14 +98,22 @@ fn main() -> Result<()> {
 
 
   loop {
-    if let Ok(status) = ens160.get_status() {
-      if status.new_data_ready() {  // read all measurements
-        let measuremnts: Measurements = ens160.get_measurements_blocking().unwrap();
-        info!("measurements are : {:#?}\n\n", measuremnts);
-      }    
-      else {
-        info!("no new data ready");
-      }  
+
+    if let Ok(measurements) = sths34pf80.get_measurements_timeout(10) {
+      match measurements.presence_value {
+        Some(presence_value) => info!("presence detected, value is {}", presence_value),
+        _ => (),
+      }
+      match measurements.motion_value {
+        Some(motion_value) => info!("motion detected, value is {}", motion_value),
+        _ => (),
+      }
+      match measurements.ambient_shock_value {
+        Some(abmient_shock_value) => info!("ambient shock temp detected, value is {}", abmient_shock_value),
+        _ => (),
+      }
+    } else {
+      info!("timeout with get_measurements_timeout call");
     }
 
     FreeRtos::delay_ms(10000);
