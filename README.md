@@ -42,7 +42,7 @@ Unfortunately the github repository name is not spelled correctly but now stuck 
 The proper device and crate name is sths34pf80 while the mis-spelled repo name is stsh34pf80.
 
 ### Recent version history
-  - 0.1.6  fizxed the example below, added Raspberry Pi example
+  - 0.1.7  fixed the example below, added Raspberry Pi example
   - 0.1.5  github repo name fixed in links
   - 0.1.4  Documentation improvements.
   - 0.1.0  Initial release.
@@ -94,8 +94,6 @@ fn main() -> Result<()> {
   let mut sths34pf80 = Sths34pf80::new(i2c_dev, Ets{});  // Ets is ESP32 IDF delay function
 
   sths34pf80.initialize().unwrap();  
-
-
 
   loop {
 
