@@ -18,7 +18,7 @@ sensitivity.
 ### Features
 
 - updated to use embedded-hal version 1.0.x
-- designed for embedded use (ESP32-C3, -C6 and -S3 and STM32F3DISCOVERY)
+- designed for embedded use (ESP32-C3, -C6 and -S3) and Raspberry Pi 
 - configurable interrupt pin
 - data ready status based presence, motion and ambient shock measurement reads 
 - low pass filter configuration if needed
@@ -42,6 +42,7 @@ Unfortunately the github repository name is not spelled correctly but now stuck 
 The proper device and crate name is sths34pf80 while the mis-spelled repo name is stsh34pf80.
 
 ### Recent version history
+  - 0.1.8  Updated README.md
   - 0.1.7  fixed the example below, added Raspberry Pi example
   - 0.1.5  github repo name fixed in links
   - 0.1.4  Documentation improvements.
