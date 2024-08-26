@@ -340,7 +340,7 @@ impl InterruptPinConfig {
     }
 
     /// build just returns the value as u8 (to complete the builder pattern)
-    pub fn build(mut self) -> u8 {
+    pub fn build(self) -> u8 {
         self.0 as u8
     }
 

@@ -18,6 +18,7 @@ sensitivity.
 ### Features
 
 - updated to use embedded-hal version 1.0.x
+- async support included as a feature
 - designed for embedded use (ESP32-C3, -C6 and -S3) and Raspberry Pi 
 - configurable interrupt pin
 - data ready status based presence, motion and ambient shock measurement reads 
@@ -38,10 +39,14 @@ sensitivity.
 This driver is loosly based on Sparkfun Arduino STHS34PF80 driver.  A Sparkfun STHS34PF80
 https://www.sparkfun.com/products/22494 sensor board was used for this driver development.
 
+In version 0.1.9 the error enum was changed to a simpler embedded-hal 1.0 I2C style.  Hopefully
+it does not break your code (consider using anyerror create).
+
 Unfortunately the github repository name is not spelled correctly but now stuck with it.
 The proper device and crate name is sths34pf80 while the mis-spelled repo name is stsh34pf80.
 
 ### Recent version history
+  - 0.1.9  Added async support
   - 0.1.8  Updated README.md
   - 0.1.7  fixed the example below, added Raspberry Pi example
   - 0.1.5  github repo name fixed in links
@@ -59,19 +64,27 @@ Add the dependency to `Cargo.toml`.
 version = "0.1"
 ~~~~
 
+or for async
+~~~~toml
+[dependencies.sths34pf80]
+version = "0.1", features = ["async"]
+~~~~
+
 Create a hardward specific I²C driver interface and delay function
 Create an Sths34pf80 struct from the I²C interface and a delay function.
 Configure interrupt pin properties if required.  
 Initialize Sths34pf80  (initialize() fn sets "standard" trims and ODR paramaters).
 Set presence, motion or ambient shock threshold only if required for more/less detection range
 Read the STHS34PF80 status and check if new data is ready, then get_func_status and match
-the returns FUNC_STATUS enum to see which of the three values changed, then get those values.  
+the returned FUNC_STATUS enum to see which of the three values changed, then get those values.  
  
 
 
 ### Simple Example
 
-A more complete example is in the repository examples path
+A more complete example is in the repository examples path.
+
+For async see async-embassy folder in examples folder or repository.
 ~~~~rust
 
 

@@ -1,6 +1,6 @@
 [package]
 name = "sths34pf80"
-version = "0.1.8"
+version = "0.1.9"
 edition = "2021"
 
 authors = ["fordauthor42@gmail.com"]
@@ -22,13 +22,17 @@ exclude = [
 ]
 
 [features]
-default = []
+default = ["sync"]
+sync = []
+async = ["embedded-hal-async"]
 
 [dependencies]
 log = { version = "0.4.18", default-features = false }
 # libm = "0.2.8"
 byteorder = { version = "1", default-features = false }
 embedded-hal = {version = "1.0"}
+embedded-hal-async = { version = "1.0", optional = true }
+maybe-async-cfg = "0.2"
 num-traits = { version = "0.2", default-features = false }
 bitfield = "0.14.0"
 

@@ -1,0 +1,42 @@
+[package]
+name = "embassy-example"
+version = "0.1.0"
+authors = ["somebody@somewhere.com"]
+edition = "2021"
+license = "MIT OR Apache-2.0"
+
+[dependencies]
+esp-backtrace = { version = "0.13.0", features = [
+    "esp32c6",
+    "exception-handler",
+    "panic-handler",
+    "println",
+] }
+esp-hal = { version = "0.19.0", features = [ "esp32c6", "async", "log"] }
+esp-hal-embassy = { version = "0.2.0", features = [ "esp32c6" , "log" , "integrated-timers"] }
+embedded-svc = { version = "0.26.1", default-features = false, features = [] }
+embassy-executor   = { version = "0.5.0", features = [ "integrated-timers", "arch-riscv32"] }
+embassy-sync        = "0.5.0"
+embassy-time        = "0.3.0"
+esp-println = { version = "0.10.0",  default-features = false, features = ["esp32c6", "jtag-serial", "log"] }
+esp-alloc = { version = "0.3.0" }
+log = { version = "0.4.21" }
+heapless = { version = "0.8.0", default-features = false }
+static_cell = "2.1.0"
+embedded-hal-async = "1.0.0"
+
+sths34pf80 = { path = "../../esp32-c6-std/sths34pf80", version = "0.1", features = ["async"] }
+
+[profile.dev]
+# Rust debug is too slow.
+# For debug builds always builds with some optimization
+opt-level = "s"
+
+[profile.release]
+codegen-units = 1 # LLVM can perform better optimizations using a single thread
+debug = 2
+debug-assertions = false
+incremental = false
+lto = 'fat'
+opt-level = 's'
+overflow-checks = false

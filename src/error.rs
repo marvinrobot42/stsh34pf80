@@ -1,17 +1,19 @@
-use core::fmt::Formatter;
+//use core::fmt::Formatter;
 
-use embedded_hal::i2c::{I2c, SevenBitAddress};
+//use embedded_hal::i2c::{I2c, SevenBitAddress};
 
 /// All possible errors
 /// Display not implemented for no_std support
-pub enum Sths34pf80Error<I2C>
+#[derive(Clone, Copy, Debug)]
+pub enum Error<E>
 where
-    I2C: I2c<SevenBitAddress>
+//    I2C: I2c<SevenBitAddress>
 {
     /// Error during I2C write operation.
-    WriteError(I2C::Error),
-    /// Error during I2C WriteRead operation.
-    WriteReadError(I2C::Error),
+    I2c(E),
+    //WriteError(I2C::Error),
+    //// Error during I2C WriteRead operation.
+    //WriteReadError(I2C::Error),
     /// Got an unexpected Part Id during sensor initalization.
     UnexpectedChipId(u8),
     /// unexpected Operation Mode
@@ -26,6 +28,8 @@ where
     MeasurementTimeout(),
 }
 
+
+/***********
 impl<I2C> core::fmt::Debug for Sths34pf80Error<I2C>
 where
     I2C: I2c<SevenBitAddress>
@@ -61,4 +65,6 @@ where
                 .finish(),
         }
     }
+
 }
+    ******/
