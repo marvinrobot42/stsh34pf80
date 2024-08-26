@@ -46,6 +46,7 @@ Unfortunately the github repository name is not spelled correctly but now stuck 
 The proper device and crate name is sths34pf80 while the mis-spelled repo name is stsh34pf80.
 
 ### Recent version history
+  - 0.1.10 Fixed typo
   - 0.1.9  Added async support
   - 0.1.8  Updated README.md
   - 0.1.7  fixed the example below, added Raspberry Pi example
@@ -84,7 +85,7 @@ the returned FUNC_STATUS enum to see which of the three values changed, then get
 
 A more complete example is in the repository examples path.
 
-For async see async-embassy folder in examples folder or repository.
+For async see async-embassy folder in examples folder of repository.
 ~~~~rust
 
 
