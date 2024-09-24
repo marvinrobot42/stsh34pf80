@@ -24,7 +24,7 @@ sensitivity.
 - data ready status based presence, motion and ambient shock measurement reads 
 - low pass filter configuration if needed
 - hysteresis getters and setters
-- sensivity getters and setters
+- sensitivity getters and setters
 - gain getters and setters
 - data output rate, average trim getters and setters
 - an easy to use Measurements struct
@@ -46,6 +46,7 @@ Unfortunately the github repository name is not spelled correctly but now stuck 
 The proper device and crate name is sths34pf80 while the mis-spelled repo name is stsh34pf80.
 
 ### Recent version history
+  - 0.1.11 Fixed more typos
   - 0.1.10 Fixed typo
   - 0.1.9  Added async support
   - 0.1.8  Updated README.md

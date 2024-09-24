@@ -694,8 +694,8 @@ where
     }
 
     /// get TMOS sensitivity; mkae sure to save the factory value before changing just in case...
-    pub async fn get_tmos_sensitivty(&mut self) -> Result<f32, Error<E>> {
-        debug!("in get_tmos_sensivity");
+    pub async fn get_tmos_sensitivity(&mut self) -> Result<f32, Error<E>> {
+        debug!("in get_tmos_sensitivity");
         let mut result_buf: [u8; 1] = [0; 1];
         
         self.read_register(STHS34PF80_SENS_DATA, &mut result_buf).await?;
@@ -708,11 +708,11 @@ where
         Ok(value)
     }
 
-    /// set TMOS sensivity  :  only if external lense is added
+    /// set TMOS sensitivity  :  only if external lense is added
     /// !!!! this function is not functional at this time !!!!!!!
     /// acceptable range is 0.0 -to +4080.0
     pub async fn set_tmos_sensitivity(&mut self, new_value: f32) -> Result<(), Error<E>> {
-        debug!("in set_tmos_sensivity to {}", new_value);
+        debug!("in set_tmos_sensitivity to {}", new_value);
         // value is = (new_value - 2048) / 16
         // it must be a valid i8 (signed 2's comp) to be written
         let write_value: f32 = (new_value - 2048.0) / 16.0;

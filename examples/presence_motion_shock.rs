@@ -81,8 +81,8 @@ fn main() -> Result<()> {
     let avg_tambient_num: AverageTrimT1Flag = sths34pf80.get_avg_tambient_num().unwrap();
     info!(" avg_tambient_num is {:#?}", avg_tambient_num);
 
-    let tmos_sens = sths34pf80.get_tmos_sensitivty().unwrap();
-    info!("get_tmos_sensivity is : {}", tmos_sens);
+    let tmos_sens = sths34pf80.get_tmos_sensitivity().unwrap();
+    info!("get_tmos_sensitivity is : {}", tmos_sens);
 
     sths34pf80.set_tmos_sensitivity(0.0).unwrap();  // 0 -to- +4080
     
