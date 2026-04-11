@@ -46,6 +46,7 @@ Unfortunately the github repository name is not spelled correctly but now stuck 
 The proper device and crate name is sths34pf80 while the mis-spelled repo name is stsh34pf80.
 
 ### Recent version history
+  - 0.1.13 Fixed issue with embassy I2C for async usage
   - 0.1.12 Updated dependencies
   - 0.1.11 Fixed more typos
   - 0.1.10 Fixed typo
